@@ -29,8 +29,9 @@ app.use('/users', userRoutes);
 const PORT = process.env.PORT || 3001; 
 mongoose.connect(process.env.MONGO_URL, {
     dbName: process.env.DB_NAME || 'ViageReserve', 
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    //useNewUrlParser: true,
+    //useUnifiedTopology: true,
+    useCreateIndex: true
 })
 .then(() => {
     app.listen(PORT, () => console.log(`Porta do Servidor: ${PORT}`))
